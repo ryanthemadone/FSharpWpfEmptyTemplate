@@ -29,7 +29,7 @@ type TemplateWizard() =
                                      Microsoft.VisualStudio.OLE.Interop.IServiceProvider)
             this.destinationPath <- replacementsDictionary.["$destinationdirectory$"]
             this.safeProjectName <- replacementsDictionary.["$safeprojectname$"]
-            this.targetFramework <- Double.Parse replacementsDictionary.["$targetframeworkversion$"]
+            this.targetFramework <- Double.Parse (replacementsDictionary.["$targetframeworkversion$"].Substring(0, 3))
         member this.ProjectFinishedGenerating project = "Not Implemented" |> ignore
         member this.ProjectItemFinishedGenerating projectItem = "Not Implemented" |> ignore
         member this.ShouldAddProjectItem filePath = true
